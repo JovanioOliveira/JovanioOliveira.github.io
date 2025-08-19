@@ -85,18 +85,18 @@ main{
 
 .descricao{
     padding-bottom: 20px;
-    border-bottom: 2px solid #ccc;
+    /*border-bottom: 2px solid #ccc;*/
     margin-bottom: 40px;
 }
 
 h1.titulo{
-    color: #333;
+    color: coral;
     font-size: 2.5em;
     margin-bottom: 5px;
 }
 
 h1.titulo span{
-    color: coral;
+    color: #333;
 }
 
 h2{
@@ -125,10 +125,13 @@ h2{
     flex-shrink: 0;
 }
 
-.instituicao-col{
+/*.instituicao-col{
     flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
     text-align: center;
-}
+    align-items: center;
+}*/
 
 .periodo-col{
     flex-grow: 0;
@@ -155,13 +158,14 @@ h2{
 .instituicao{
     color: #666;
     font-style: italic;
+    /*margin-right: 50px;*/
     /*flex-grow: 1;
     text-align: right;
     text-align: center;
     margin: 0 10px;
     margin-right: 150px;
-    margin-left: 50px;
-}*/
+    margin-left: 50px;*/
+}
 
 /*Estilo de Listas*/
 
@@ -185,7 +189,7 @@ ul li ul li{
 .lista-habilidades{
     display: flex;
     flex-wrap: wrap;
-    list-style-type: disc;
+    /*list-style-type: disc;*/
 }
 
 .lista-habilidades li{
@@ -194,5 +198,54 @@ ul li ul li{
     border-radius: 20px;
     margin: 0 10px 10px 0;
     font-size: 0.9em;
+}
+
+/*Média Query para telas menores que 768px */
+
+@media (max-width: 768px){
+    /*Mudança de Menu*/
+    .menu{
+        width: 100%;
+        height: auto;
+        position: relative;                 /* O menu não será mais fixo */
+        flex-direction: row;                /* Coloca os itens lado a lado */
+        justify-content: space-between;     /* Distribui os itens uniformemente */
+        padding: 10px 0;
+        box-shadow: none;                   /* Remove a sombra se quiser */
+    }
+
+    .logo{
+        display: none;                      /* Esconde a foto de perfil em telas pequenas para economizar espaço */
+    }
+
+    .menu ul{
+        display: flex;                      /* Transforma a lista em uma linha de itens */
+        flex-wrap: wrap;                    /* Permite quebra de linha se necessário */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .menu li{
+        margin-bottom: 0;
+        margin: 0 5px;                      /* Adiciona um pequeno espaço entre os itens */
+    }
+
+    .menu a{
+        font-size: 0.9em;                   /* Diminui o tamanho da fonte */
+        padding: 5px;
+    }
+
+    /* Ajuste na área do conteúdo Principal*/
+
+    main{
+        margin-left: 0;                     /* Remove a margem que empurrava o conteúdo para o lado */
+        width: 100%;
+        padding: 20px;                      /* Diminui o padding para ocupar mais espaço na tela */
+    }
+    
+    .item{
+        flex-direction: column;             /* Altera a direção para que os itens fiquem um embaixo do outro */
+        align-items: flex-start;            /* Alinha os itens à esquerda */
+    }
 }
 
